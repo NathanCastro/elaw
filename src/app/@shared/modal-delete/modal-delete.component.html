@@ -1,0 +1,32 @@
+<div class="container-modal">
+  <header class="bg-navMenu">
+    <h2 class="text-2xl stroke-stone-800">{{title}}</h2>
+    <button (click)="onCancel()">
+        <mat-icon>close</mat-icon>
+    </button>
+  </header>
+
+  <div class="content-modal">
+    <div class="container" [innerHTML]="subtitle"></div>
+         
+  </div>
+
+  <footer>
+    <div>
+      <button
+        mat-stroked-button
+        color="primary"
+        type="button"
+        (click)="onCancel()">Cancelar
+      </button>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        (click)="onConfirmDelete()">
+        Confirmar
+      </button>
+    </div>
+  </footer>
+</div>

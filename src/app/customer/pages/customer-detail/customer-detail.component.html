@@ -1,1 +1,87 @@
-<p>customer-detail works!</p>
+<app-modal-default [showFooter]="false">
+    <span titleModal>Visualizar Cliente</span>
+    <div class="container" contentModal >
+      <form [formGroup]="form">
+        <div class="mt-2">
+          <label class="text-slate-800 font-medium text-sm block">Nome*</label>
+          <input
+            matInput
+            type="text"
+            formControlName="name"               
+            class="block w-full px-3 py-2 
+            border border-slate-300 rounded-md"
+          /> 
+        </div> 
+        <div class="mt-2">
+          <label class="text-slate-800 font-medium text-sm block">Email*</label>
+          <input
+            matInput
+            type="email"
+            formControlName="email"
+            class="block w-full px-3 py-2 
+            border border-slate-300 rounded-md"
+          /> 
+        </div> 
+        <div class="mt-2">
+          <label class="text-slate-800 font-medium text-sm block">Telefone</label>
+          <input
+            matInput
+            type="number"
+            formControlName="telephone" 
+            class="block w-full px-3 py-2 
+            border border-slate-300 rounded-md"
+          />
+        </div> 
+        <div class="mt-2">
+          <label class="text-slate-800 font-medium text-sm block">Rua*</label>
+          <input
+            matInput
+            type="text"
+            formControlName="street" 
+            class="block w-full px-3 py-2 
+            border border-slate-300 rounded-md"
+          /> 
+        </div>
+        <div class="mt-2">
+          <label class="text-slate-800 font-medium text-sm block">Número*</label>
+          <input
+            matInput
+            type="number"
+            formControlName="numberHouse"
+            class="block w-full px-3 py-2 
+            border border-slate-300 rounded-md"
+          /> 
+        </div>   
+        <div class="mt-2">
+          <label class="text-slate-800 font-medium text-sm block">Cidade*</label>
+          <input
+            matInput
+            type="text"
+            formControlName="city"
+            class="block w-full px-3 py-2 
+            border border-slate-300 rounded-md"
+          /> 
+        </div>   
+        <div class="mt-2">
+          <label class="text-slate-800 font-medium text-sm block">Estado*</label>
+          <input
+            matInput
+            type="text"
+            formControlName="state"
+            class="block w-full px-3 py-2 
+            border border-slate-300 rounded-md"
+          /> 
+        </div> 
+        <div class="mt-2">
+          <label class="text-slate-800 font-medium text-sm block">Cep*</label>
+          <input
+            matInput
+            type="text"
+            formControlName="zip"
+            class="block w-full px-3 py-2 
+            border border-slate-300 rounded-md"
+          /> 
+        </div>          
+      </form>
+    </div> 
+</app-modal-default>

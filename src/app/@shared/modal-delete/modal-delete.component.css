@@ -1,0 +1,71 @@
+:host {
+  .mat-dialog-container {
+    border-radius: 8px !important;
+  }
+
+  .container-modal {
+    display: flex;
+    flex-direction: column;
+
+    width: 452px;
+    min-height: 271px;
+    border-radius: 8px;
+
+    &.no-footer {
+      min-height: 200px;
+    }
+    
+  }
+
+  
+
+  .content-modal {
+    flex: 1;
+    overflow: auto;
+    padding: 24px 32px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;   
+  }
+  
+  header {
+    height: 65px;
+    min-height: 65px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 12px 24px;
+    border-bottom: 1px solid #e9ecef;
+
+    h2 {
+      flex: 1;
+      text-align: left;
+    }
+
+    button {
+      border: 0;
+      outline: 0;
+
+      >span {
+        color: #ccc;
+      }
+    }
+  }
+
+  footer {
+    height: 88px;
+    min-height: 88px;
+    border-top: 1px solid #e9ecef;
+
+    >div {
+      height: 100%;
+      margin: 0 32px;
+
+      display: flex;
+      align-items: center;
+      justify-content: right;
+
+      gap: 16px;
+    }
+  }
+}

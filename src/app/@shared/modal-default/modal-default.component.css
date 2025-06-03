@@ -1,0 +1,46 @@
+:host {
+  .container-modal {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .content-modal {
+    flex: 1;
+    overflow: auto;
+    padding: 24px 32px;
+  }
+
+  header {
+    height: 82px;
+    min-height: 82px;
+    width: 100%;
+    display: flex;
+    background-color: #D84E2B;
+    color: #ffffff;
+    align-items: center;
+    padding: 0 24px;
+
+    h2 {
+      flex: 1;
+      text-align: center;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 300;
+      font-family: 'Inter', sans-serif;
+    }
+
+    button {
+      border: 0;
+      outline: 0;
+    }
+  }
+
+  footer {
+    height: 88px;
+    min-height: 88px;
+    width: calc(100% - 64px);
+    margin: 0 32px;
+    border-top: 1px solid #e9ecef;
+  }
+}

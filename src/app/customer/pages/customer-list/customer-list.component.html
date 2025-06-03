@@ -1,6 +1,6 @@
 <div class="">    
-    <div class="docs-navbar-header flex flex-wrap items-center 
-        justify-between bg-navMenu  p-4">
+    <div class="navbar-header flex flex-wrap items-center 
+        justify-between bg-navMenu p-4">
         <img src="../../../../assets/logo.svg" class="w-24">
         <button 
             mat-button 
@@ -9,18 +9,12 @@
             (click)="newCustomer()"
             >Cadastrar
         </button>
-    </div> 
-    
+    </div>
 
-
-    <div class="list">
+    <div class="list mt-32 px-10">
         <!-- colocar o filtro aqui -->
         <div class="mat-elevation-z8">
-            <table mat-table [dataSource]="dataSource">
-            <ng-container matColumnDef="id">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> id </th>
-                <td mat-cell *matCellDef="let row"> {{ row.id }} </td>
-            </ng-container>
+            <table mat-table [dataSource]="dataSource">            
 
             <ng-container matColumnDef="name">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> name </th>
@@ -33,7 +27,7 @@
             </ng-container>
             
             <ng-container matColumnDef="action">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Ação</th>
                 <td mat-cell *matCellDef="let row">
                 <button 
                     mat-mini-fab 
@@ -41,8 +35,7 @@
                     class="buttonIcon"              
                     matTooltip="Editar" 
                     (click)="onEdit(row)">
-                    <mat-icon>edit
-                    </mat-icon>
+                    <mat-icon>edit</mat-icon>
                 </button>
                 <button 
                     mat-mini-fab
@@ -57,7 +50,7 @@
                     color="warn"
                     class="buttonIcon" 
                     matTooltip="Apagar" 
-                    (click)="delete(row.id, row.name)">         
+                    (click)="delete(row.id)">         
                     <mat-icon>delete</mat-icon>
                 </button>
                 </td>
@@ -68,6 +61,7 @@
             </table>
             <mat-paginator 
                 [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 25, 100]"
                 showFirstLastButtons 
                 aria-label="Selecione a página de cliente">
             </mat-paginator>
