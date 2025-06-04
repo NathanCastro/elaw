@@ -21,10 +21,10 @@ export class CustomerListComponent implements OnInit{
   @Input() public customerId: string; 
 
   public clients: Customer[] = [];
-  
+
+
   dataSource = new MatTableDataSource<Customer>();
-  displayedColumns = customerColumn;
-  
+  displayedColumns = customerColumn;  
   
   constructor(
     public dialog: MatDialog,
@@ -33,15 +33,15 @@ export class CustomerListComponent implements OnInit{
 
   ngOnInit(): void {
     this.getAllCustomers();
-    this.customerService.customerUpdatedSubject.subscribe(() => {
-      this.getAllCustomers();
-    });
+    // this.customerService.customerUpdatedSubject.subscribe(() => {
+    //   this.getAllCustomers();
+    // });
+
   }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
-
 
   public newCustomer(){
     this.dialog.open(CustomerInsertComponent, ModalConfig.MEDIUM)

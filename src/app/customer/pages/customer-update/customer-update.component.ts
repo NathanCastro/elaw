@@ -1,38 +1,40 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { Customer } from '../../model/Customer';
+import { CustomerService } from './../../customer.service';
 
 @Component({
   selector: 'app-customer-update',
   templateUrl: './customer-update.component.html',
   styleUrls: ['./customer-update.component.css']
 })
-export class CustomerUpdateComponent {
-  
+export class CustomerUpdateComponent implements OnInit{ 
   
   public form: FormGroup;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: Customer,
     private fb: FormBuilder,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private customerService: CustomerService
   ){}
 
   ngOnInit(){
     this.setForm();
-  }
-
-
-  public verificaValidTouched(field:any){
-    return !this.form.get(field)?.valid && this.form.get(field)?.touched;     
   }
   
   public cancel(){
     this.dialog.closeAll();
   };
 
-  public save(){};
+  public save(){
+    if(this.form.dirty && this.form.valid){
+      const updatedCustomer = this.form.value;
+      this.customerService.updateCustomer(updatedCustomer);
+      this.dialog.closeAll();
+    }
+  };
 
   private setForm(){
     this.form = this.fb.group({

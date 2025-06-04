@@ -4,140 +4,94 @@
      <div class="container" contentModal>
       <form [formGroup]="form">
         <div class="mt-2">
-            <label class="text-slate-800 font-medium text-sm block">Nome*</label>
-            <input
-              matInput
-              type="text"
-              formControlName="name"
-              placeholder="João Oliveira" 
-              class="block w-full px-3 py-2 
-              border border-slate-300 rounded-md"
-              [class.input-error]="verificaValidTouched('name')"
-            /> 
-            <!-- <small class="gene-block" 
-              *ngIf="displayMessage['name']"
-              class="warn-text">
-              <p [innerHTML]="displayMessage['name']"></p>
-            </small> -->
+          <label class="text-slate-800 font-medium text-sm block">Nome*</label>
+          <input
+            matInput
+            type="text"
+            formControlName="name"
+            placeholder="João Oliveira" 
+            class="block w-full px-3 py-2 
+            border border-slate-300 rounded-md"
+          />             
         </div> 
         <div class="mt-2">
-            <label class="text-slate-800 font-medium text-sm block">Email*</label>
-            <input
-              matInput
-              type="email"
-              formControlName="email"
-              placeholder="joao@gmail.com" 
-              class="block w-full px-3 py-2 
-              border border-slate-300 rounded-md"
-              [class.input-error]="verificaValidTouched('email')"
-            /> 
-            <!-- <small class="gene-block" 
-              *ngIf="displayMessage['name']"
-              class="warn-text">
-              <p [innerHTML]="displayMessage['name']"></p>
-            </small> -->
+          <label class="text-slate-800 font-medium text-sm block">Email*</label>
+          <input
+            matInput
+            type="email"
+            formControlName="email"
+            placeholder="joao@gmail.com" 
+            class="block w-full px-3 py-2 
+            border border-slate-300 rounded-md"
+          />             
         </div> 
         <div class="mt-2">
-            <label class="text-slate-800 font-medium text-sm block">Telefone</label>
-            <input
-              matInput
-              type="number"
-              formControlName="telephone"
-              placeholder="(21)99852-9658" 
-              class="block w-full px-3 py-2 
-              border border-slate-300 rounded-md"
-              [class.input-error]="verificaValidTouched('telephone')"
-            /> 
-            <!-- <small class="gene-block" 
-              *ngIf="displayMessage['name']"
-              class="warn-text">
-              <p [innerHTML]="displayMessage['name']"></p>
-            </small> -->
+          <label class="text-slate-800 font-medium text-sm block">Telefone</label>
+          <input
+            matInput
+            type="text"
+            formControlName="telephone"
+            placeholder="(21)99852-9658"
+            mask="(00) 00000-0000" 
+            class="block w-full px-3 py-2 
+            border border-slate-300 rounded-md"
+          />
         </div> 
         <div class="mt-2">
-            <label class="text-slate-800 font-medium text-sm block">Rua*</label>
-            <input
-              matInput
-              type="text"
-              formControlName="street"
-              placeholder="Rua Conceição" 
-              class="block w-full px-3 py-2 
-              border border-slate-300 rounded-md"
-              [class.input-error]="verificaValidTouched('rua')"
-            /> 
-            <!-- <small class="gene-block" 
-              *ngIf="displayMessage['name']"
-              class="warn-text">
-              <p [innerHTML]="displayMessage['name']"></p>
-            </small> -->
+          <label class="text-slate-800 font-medium text-sm block">Rua*</label>
+          <input
+            matInput
+            type="text"
+            formControlName="street"
+            placeholder="Rua Conceição" 
+            class="block w-full px-3 py-2 
+            border border-slate-300 rounded-md"
+          /> 
         </div>
         <div class="mt-2">
-            <label class="text-slate-800 font-medium text-sm block">Número*</label>
-            <input
-              matInput
-              type="number"
-              formControlName="numberHouse"
-              placeholder="09" 
-              class="block w-full px-3 py-2 
-              border border-slate-300 rounded-md"
-              [class.input-error]="verificaValidTouched('numero')"
-            /> 
-            <!-- <small class="gene-block" 
-              *ngIf="displayMessage['name']"
-              class="warn-text">
-              <p [innerHTML]="displayMessage['name']"></p>
-            </small> -->
+          <label class="text-slate-800 font-medium text-sm block">Número*</label>
+          <input
+            matInput
+            type="number"
+            formControlName="numberHouse"
+            placeholder="09" 
+            class="block w-full px-3 py-2 
+            border border-slate-300 rounded-md"
+          /> 
         </div>   
         <div class="mt-2">
-            <label class="text-slate-800 font-medium text-sm block">Cidade*</label>
-            <input
-              matInput
-              type="text"
-              formControlName="city"
-              placeholder="Teresina" 
-              class="block w-full px-3 py-2 
-              border border-slate-300 rounded-md"
-              [class.input-error]="verificaValidTouched('cidade')"
-            /> 
-            <!-- <small class="gene-block" 
-              *ngIf="displayMessage['name']"
-              class="warn-text">
-              <p [innerHTML]="displayMessage['name']"></p>
-            </small> -->
+          <label class="text-slate-800 font-medium text-sm block">Cidade*</label>
+          <input
+            matInput
+            type="text"
+            formControlName="city"
+            placeholder="Teresina" 
+            class="block w-full px-3 py-2 
+            border border-slate-300 rounded-md"
+          /> 
         </div>   
         <div class="mt-2">
-            <label class="text-slate-800 font-medium text-sm block">Estado*</label>
-            <input
-              matInput
-              type="text"
-              formControlName="state"
-              placeholder="Amazonas" 
-              class="block w-full px-3 py-2 
-              border border-slate-300 rounded-md"
-              [class.input-error]="verificaValidTouched('estado')"
-            /> 
-            <!-- <small class="gene-block" 
-              *ngIf="displayMessage['name']"
-              class="warn-text">
-              <p [innerHTML]="displayMessage['name']"></p>
-            </small> -->
+          <label class="text-slate-800 font-medium text-sm block">Estado*</label>
+          <input
+            matInput
+            type="text"
+            formControlName="state"
+            placeholder="Amazonas" 
+            class="block w-full px-3 py-2 
+            border border-slate-300 rounded-md"
+          /> 
         </div> 
         <div class="mt-2">
           <label class="text-slate-800 font-medium text-sm block">Cep*</label>
           <input
             matInput
-            type="number"
+            type="text"
             formControlName="zip"
-            placeholder="00000000" 
+            placeholder="00000-000"
+            mask="00000-000"
             class="block w-full px-3 py-2 
-            border border-slate-300 rounded-md"
-            [class.input-error]="verificaValidTouched('cep')"
+            border border-slate-300 rounded-md"            
           /> 
-          <!-- <small class="gene-block" 
-            *ngIf="displayMessage['name']"
-            class="warn-text">
-            <p [innerHTML]="displayMessage['name']"></p>
-          </small> -->
         </div>          
       </form>
     </div>
@@ -147,14 +101,14 @@
         type="submit"
         mat-stroked-button
         color="primary"
-        class="text-black font-bold py-2 px-4 btncancel"
+        class="text-black font-bold py-2 px-4"
         (click)="cancel()">
         Cancelar
       </button>
 
       <button 
         type="submit"
-        class="text-black font-bold py-2 px-4 btnsave"
+        class="text-black font-bold py-2 px-4"
         mat-raised-button
         color="primary"
         (click)="save()">

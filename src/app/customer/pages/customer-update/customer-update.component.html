@@ -11,13 +11,7 @@
             formControlName="name"
             class="block w-full px-3 py-2 
             border border-slate-300 rounded-md"
-            [class.input-error]="verificaValidTouched('name')"
-          /> 
-          <!-- <small class="gene-block" 
-            *ngIf="displayMessage['name']"
-            class="warn-text">
-            <p [innerHTML]="displayMessage['name']"></p>
-          </small> -->
+          />         
         </div> 
         <div class="mt-2">
           <label class="text-slate-800 font-medium text-sm block">Email*</label>
@@ -27,29 +21,18 @@
             formControlName="email"
             class="block w-full px-3 py-2 
             border border-slate-300 rounded-md"
-            [class.input-error]="verificaValidTouched('email')"
-          /> 
-          <!-- <small class="gene-block" 
-            *ngIf="displayMessage['name']"
-            class="warn-text">
-            <p [innerHTML]="displayMessage['name']"></p>
-          </small> -->
+          />
         </div> 
         <div class="mt-2">
           <label class="text-slate-800 font-medium text-sm block">Telefone</label>
           <input
             matInput
-            type="number"
+            type="text"
             formControlName="telephone"
+            mask="(00) 00000-0000" 
             class="block w-full px-3 py-2 
             border border-slate-300 rounded-md"
-            [class.input-error]="verificaValidTouched('telephone')"
-          /> 
-          <!-- <small class="gene-block" 
-            *ngIf="displayMessage['name']"
-            class="warn-text">
-            <p [innerHTML]="displayMessage['name']"></p>
-          </small> -->
+          />   
         </div> 
         <div class="mt-2">
           <label class="text-slate-800 font-medium text-sm block">Rua*</label>
@@ -59,13 +42,7 @@
             formControlName="street"
             class="block w-full px-3 py-2 
             border border-slate-300 rounded-md"
-            [class.input-error]="verificaValidTouched('rua')"
-          /> 
-          <!-- <small class="gene-block" 
-            *ngIf="displayMessage['name']"
-            class="warn-text">
-            <p [innerHTML]="displayMessage['name']"></p>
-          </small> -->
+          />          
         </div>
         <div class="mt-2">
           <label class="text-slate-800 font-medium text-sm block">Número*</label>
@@ -75,13 +52,8 @@
             formControlName="numberHouse"
             class="block w-full px-3 py-2 
             border border-slate-300 rounded-md"
-            [class.input-error]="verificaValidTouched('numero')"
           /> 
-          <!-- <small class="gene-block" 
-            *ngIf="displayMessage['name']"
-            class="warn-text">
-            <p [innerHTML]="displayMessage['name']"></p>
-          </small> -->
+         
         </div>   
         <div class="mt-2">
           <label class="text-slate-800 font-medium text-sm block">Cidade*</label>
@@ -91,13 +63,8 @@
             formControlName="city"
             class="block w-full px-3 py-2 
             border border-slate-300 rounded-md"
-            [class.input-error]="verificaValidTouched('cidade')"
           /> 
-          <!-- <small class="gene-block" 
-            *ngIf="displayMessage['name']"
-            class="warn-text">
-            <p [innerHTML]="displayMessage['name']"></p>
-          </small> -->
+         
         </div>   
         <div class="mt-2">
           <label class="text-slate-800 font-medium text-sm block">Estado*</label>
@@ -107,29 +74,18 @@
             formControlName="state"
             class="block w-full px-3 py-2 
             border border-slate-300 rounded-md"
-            [class.input-error]="verificaValidTouched('estado')"
-          /> 
-          <!-- <small class="gene-block" 
-            *ngIf="displayMessage['name']"
-            class="warn-text">
-            <p [innerHTML]="displayMessage['name']"></p>
-          </small> -->
+          />          
         </div> 
         <div class="mt-2">
           <label class="text-slate-800 font-medium text-sm block">Cep*</label>
           <input
             matInput
-            type="number"
+            type="text"
             formControlName="zip"
+            mask="00000-000"
             class="block w-full px-3 py-2 
             border border-slate-300 rounded-md"
-            [class.input-error]="verificaValidTouched('cep')"
           /> 
-          <!-- <small class="gene-block" 
-            *ngIf="displayMessage['name']"
-            class="warn-text">
-            <p [innerHTML]="displayMessage['name']"></p>
-          </small> -->
         </div>          
       </form>
     </div>
@@ -139,14 +95,14 @@
         type="submit"
         mat-stroked-button
         color="primary"
-        class="text-black font-bold py-2 px-4 btncancel"
+        class="text-black font-bold py-2 px-4"
         (click)="cancel()">
         Cancelar
       </button>
 
       <button 
         type="submit"
-        class="text-black font-bold py-2 px-4 btnsave"
+        class="text-black font-bold py-2 px-4"
         mat-raised-button
         color="primary"
         (click)="save()">

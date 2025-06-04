@@ -22,10 +22,6 @@ export class CustomerInsertComponent implements OnInit {
     this.setForm();
   }
 
-
-  public verificaValidTouched(field:any){
-    return !this.form.get(field)?.valid && this.form.get(field)?.touched;     
-  }
   
   public cancel(){
     this.dialog.closeAll();

@@ -1,4 +1,20 @@
+:host::ng-deep{
+    .mat-mdc-paginator-container{
+        justify-content: center;
+    }
+    .mat-mdc-cell, th{
+        text-align: center;
+    }
+}
 .newCustomer{
     color: #D84E2B!important;
     background-color: #fff;
+}
+
+.buttonIcon{
+    margin-right: 10px;
+}
+
+.tableList{
+    margin-bottom: 7px;
 }

@@ -11,9 +11,10 @@ import { CustomerModule } from './customer/customer.module';
     
   ],
   imports: [
+    
     BrowserModule,
     BrowserAnimationsModule, 
-    CustomerModule 
+    CustomerModule,
   ],
 
   providers: [],
