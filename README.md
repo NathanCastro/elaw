@@ -103,4 +103,10 @@ Este projeto está sob a licença (Nathan Castro) - veja o arquivo [LICENSE.md](
 
 
 ## Conclusão
-fotos
+
+#Cadastro
+![preview](https://github.com/user-attachments/assets/1e5be989-07d6-4eb7-aa44-56780ea71ad4)
+
+#Edição, Visualização e Apagar
+![preview2](https://github.com/user-attachments/assets/bddab8e0-7b7f-4719-a585-dbd44fbaae78)
+
