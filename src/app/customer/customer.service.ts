@@ -1,20 +1,21 @@
-import { EventEmitter, Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable, of, Subject } from 'rxjs';
 import { Customer } from './model/Customer';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
-  public customerUpdatedSubject = new EventEmitter()
+  public customerUpdatedSubject = new Subject<void>();
+
   private key = 'customers';
 
   constructor() { }
 
   
 
-  public getAll(): Customer[]{
-    return this.getStorage();
+  public getAll(): Observable<Customer[]>{
+   return of(this.getStorage());
   }
 
   public getById(id:string): Observable<Customer | undefined> {
@@ -23,33 +24,33 @@ export class CustomerService {
     return of(customer); 
   }
 
-  public addCustomer(client: Customer){
+  public addCustomer(client: Customer): void{
     const customers = this.getStorage();
     customers.push(client);
     this.setStorage(customers);
-    this.customerUpdatedSubject.emit();
+    this.customerUpdatedSubject.next();
   }
 
-  public updateCustomer(updatedCustomer: Customer) {
+  public updateCustomer(updatedCustomer: Customer): void {
     const customers = this.getStorage();
     const index = customers.findIndex(x => x.id === updatedCustomer.id);
 
     if (index !== -1) {
       customers[index] = updatedCustomer;
       this.setStorage(customers);
-      this.customerUpdatedSubject.emit();
+      this.customerUpdatedSubject.next();
     }
   }
 
 
-  public deleteCustomer(id: string) {
+  public deleteCustomer(id: string): void {
     const clients = this.getStorage();
     const index = clients.findIndex((x: Customer) => x.id === id);
 
     if (index > -1) {
       clients.splice(index, 1);
       this.setStorage(clients);
-      this.customerUpdatedSubject.emit();
+      this.customerUpdatedSubject.next();
     }
   }
 
@@ -59,8 +60,7 @@ export class CustomerService {
     return data ? JSON.parse(data) : [];
   }
 
-  private setStorage(customers: any[]) {
+  private setStorage(customers: Customer[]): void {
     localStorage.setItem(this.key, JSON.stringify(customers));
   }
-
 }

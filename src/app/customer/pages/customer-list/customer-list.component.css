@@ -6,6 +6,44 @@
         text-align: center;
     }
 }
+
+.contentList{
+    margin-top: 32px;
+    padding: 10px;
+
+    @media (max-width: 444px) {
+        .mdc-data-table__cell{
+            padding: 0;            
+        }
+        .mat-column-name{
+            padding-left: 7px;
+        }
+        .mat-column-action{
+            padding-left: 2px;
+        }
+        .mat-mdc-cell, th{
+            text-align: start;
+        }        
+        .mdc-fab--mini {
+            width: 30px;
+            height: 30px;
+        }
+        .material-icons {
+            font-size: 20px;
+        }
+        .buttonIcon{
+            margin: 1px;
+        }
+
+        .mat-mdc-paginator-range-label{
+            margin: 0;
+        }
+        .mat-mdc-paginator-container{
+            padding: 0;
+        }
+    }
+}
+
 .newCustomer{
     color: #D84E2B!important;
     background-color: #fff;

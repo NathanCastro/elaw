@@ -11,8 +11,13 @@
             formControlName="name"
             placeholder="João Oliveira" 
             class="block w-full px-3 py-2 
-            border border-slate-300 rounded-md"
-          />             
+            border  rounded-md"
+            [ngClass]="{
+              'border-red-500': fieldIsValid(form.get('name')),
+              'border-slate-300': !fieldIsValid(form.get('name'))
+            }"
+          />  
+          <app-field-error [control]="form.get('name')"></app-field-error>           
         </div> 
         <div class="mt-2">
           <label class="text-slate-800 font-medium text-sm block">Email*</label>
@@ -22,8 +27,13 @@
             formControlName="email"
             placeholder="joao@gmail.com" 
             class="block w-full px-3 py-2 
-            border border-slate-300 rounded-md"
-          />             
+            border rounded-md"
+            [ngClass]="{
+              'border-red-500': fieldIsValid(form.get('email')),
+              'border-slate-300': !fieldIsValid(form.get('email'))
+            }"
+          />  
+          <app-field-error [control]="form.get('email')"></app-field-error>
         </div> 
         <div class="mt-2">
           <label class="text-slate-800 font-medium text-sm block">Telefone</label>
@@ -45,8 +55,12 @@
             formControlName="street"
             placeholder="Rua Conceição" 
             class="block w-full px-3 py-2 
-            border border-slate-300 rounded-md"
-          /> 
+            border rounded-md"
+            [ngClass]="form.get('street')?.invalid && form.get('street')?.touched 
+              ? 'border-red-500' 
+              : 'border-slate-300'"
+          />  
+          <app-field-error [control]="form.get('street')"></app-field-error>
         </div>
         <div class="mt-2">
           <label class="text-slate-800 font-medium text-sm block">Número*</label>
@@ -56,8 +70,12 @@
             formControlName="numberHouse"
             placeholder="09" 
             class="block w-full px-3 py-2 
-            border border-slate-300 rounded-md"
-          /> 
+            border rounded-md" [ngClass]="{
+              'border-red-500': fieldIsValid(form.get('numberHouse')),
+              'border-slate-300': !fieldIsValid(form.get('numberHouse'))
+            }"
+          />  
+          <app-field-error [control]="form.get('numberHouse')"></app-field-error>
         </div>   
         <div class="mt-2">
           <label class="text-slate-800 font-medium text-sm block">Cidade*</label>
@@ -67,8 +85,12 @@
             formControlName="city"
             placeholder="Teresina" 
             class="block w-full px-3 py-2 
-            border border-slate-300 rounded-md"
-          /> 
+            border rounded-md" [ngClass]="{
+              'border-red-500': fieldIsValid(form.get('city')),
+              'border-slate-300': !fieldIsValid(form.get('city'))
+            }"
+          />  
+          <app-field-error [control]="form.get('city')"></app-field-error>
         </div>   
         <div class="mt-2">
           <label class="text-slate-800 font-medium text-sm block">Estado*</label>
@@ -78,8 +100,12 @@
             formControlName="state"
             placeholder="Amazonas" 
             class="block w-full px-3 py-2 
-            border border-slate-300 rounded-md"
-          /> 
+            border rounded-md" [ngClass]="{
+              'border-red-500': fieldIsValid(form.get('state')),
+              'border-slate-300': !fieldIsValid(form.get('state'))
+            }"
+          />  
+          <app-field-error [control]="form.get('state')"></app-field-error>
         </div> 
         <div class="mt-2">
           <label class="text-slate-800 font-medium text-sm block">Cep*</label>
@@ -90,8 +116,12 @@
             placeholder="00000-000"
             mask="00000-000"
             class="block w-full px-3 py-2 
-            border border-slate-300 rounded-md"            
-          /> 
+            border rounded-md" [ngClass]="{
+              'border-red-500': fieldIsValid(form.get('zip')),
+              'border-slate-300': !fieldIsValid(form.get('zip'))
+            }"
+          />  
+          <app-field-error [control]="form.get('zip')"></app-field-error> 
         </div>          
       </form>
     </div>
@@ -111,6 +141,7 @@
         class="text-black font-bold py-2 px-4"
         mat-raised-button
         color="primary"
+        [disabled]="form.invalid || !form.dirty"
         (click)="save()">
         Salvar
       </button>        

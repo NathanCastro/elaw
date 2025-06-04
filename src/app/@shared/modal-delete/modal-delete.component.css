@@ -4,8 +4,7 @@
   }
 
   .container-modal {
-    width: 452px;
-    min-height: 271px;
+    min-height: 250px;
     border-radius: 8px;
 
     &.no-footer {
