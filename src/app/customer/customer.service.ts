@@ -24,14 +24,15 @@ export class CustomerService {
     return of(customer); 
   }
 
-  public addCustomer(client: Customer): void{
+  public addCustomer(client: Customer): Observable<Customer> {
     const customers = this.getStorage();
     customers.push(client);
     this.setStorage(customers);
     this.customerUpdatedSubject.next();
+    return of(client);
   }
 
-  public updateCustomer(updatedCustomer: Customer): void {
+  public updateCustomer(updatedCustomer: Customer): Observable<Customer | null> {
     const customers = this.getStorage();
     const index = customers.findIndex(x => x.id === updatedCustomer.id);
 
@@ -39,11 +40,14 @@ export class CustomerService {
       customers[index] = updatedCustomer;
       this.setStorage(customers);
       this.customerUpdatedSubject.next();
+      return of(updatedCustomer);
     }
+
+    return of(null);
   }
 
 
-  public deleteCustomer(id: string): void {
+  public deleteCustomer(id: string): Observable<boolean> {
     const clients = this.getStorage();
     const index = clients.findIndex((x: Customer) => x.id === id);
 
@@ -51,7 +55,9 @@ export class CustomerService {
       clients.splice(index, 1);
       this.setStorage(clients);
       this.customerUpdatedSubject.next();
+      return of(true);
     }
+    return of(false);
   }
 
 
